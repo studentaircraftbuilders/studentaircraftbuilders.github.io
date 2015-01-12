@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Student Aircraft Builders - Media</title>
+	<link rel="stylesheet" type="text/css" href="stylesheetMain.css">
+	<script type="text/javascript" src="hover.js"></script>
+</head>
+
+<body>
+<!-- use divs and lists to organize with css-->
+<div id="header">
+		<a href="index.html"><img src="Images/Header/header.jpg" alt="" width="900px"></a></div>
+<div id="container">
+	<div id="menu">
+		<ul id="nav">
+	<li><a href="news.php.html">News</a></li>
+	<li><a href="dynamic_instructions.php.html#">About Us</a>
+		<ul>
+			<li><a href="bios.php.html">Officer Bios</a></li>
+			<li><a href="media.php.html">Media</a></li>
+			<!--<li><a href="http://sab.ae.illinois.edu/aboutus.php">Mission</a></li>-->
+			<!--<li><a href="http://sab.ae.illinois.edu/resources.php">Resources</a></li>-->
+			<!--<li><a href="http://sab.ae.illinois.edu/projectcost.php">Estimated Expenses</a></li>-->
+			<!--<li><a href="#">Executive Board</a></li>-->
+			<!--<li><a href="http://sab.ae.illinois.edu/longtermgoals.php">Long Term Goals</a></li>-->
+		</ul>
+	</li>
+	<li><a href="active_projects.php.html">Construction</a>
+		<ul>
+			<li><a href="2013-14_project.php.html">2013-14 Project</a></li>
+			<li><a href="build_implementation.php.html">Build Process</a></li>
+			<li><a href="project_management.php.html">Project Management</a></li>
+			<!--<li><a href="http://sab.ae.illinois.edu/cad_project.php">CAD Project</a></li>-->
+			<li><a href="constructionlogs.php.html">Construction Logs</a></li>
+			<li><a href="safety.php.html">Safety</a></li>
+		</ul>
+	</li>
+	<li><a href="active_projects.php.html">Special Projects</a>
+		<ul>
+			<li><a href="design_team.php.html">Design Team</a></li>
+			<!--<li><a href="http://sab.ae.illinois.edu/computer_vision.php">Computer Vision Project</a></li>-->
+			<li><a href="dynamic_instructions.php.html">Dynamic Instructions</a></li>
+			<li><a href="engine_team.php.html">Engine Build</a></li>
+		</ul>
+	</li>
+	<li><a href="ed_out.php.html">Educational Outreach</a></li>
+	<li><a href="calendar.php.html">Calendar</a></li>
+	<!--<li> <li><a href="#">New and Upcoming</a>
+		<ul>
+			<li><a href="http://sab.ae.illinois.edu/recentnews.php">Recent News</a></li>
+			<li><a href="http://sab.ae.illinois.edu/recruitment_social.php">Events and Social</a></li>
+			<li><a href="calendar.php.html">Calendar</a></li>
+		</ul>
+	</li>
+	-->
+	<li><a href="sponsorship.php.html">Sponsorship</a></li>
+</ul>	</div>
+	
+	<div id="body">
+		<h1>
+			Project Management Dynamic Instructions Project
+		</h1>
+		<h2>
+			A Summary of Project Management in SAB
+		</h2>
+		<p>
+			Project Management in SAB is not the same as typical project management found in other places. Project Management in SAB has the four following responsibilities:
+		</p>
+		<ul>
+			<li>Interpreting factory instructions and technical drawings</li>
+			<li>Creating airplane assembly instructions that are accessible for students</li>
+			<li>Breaking down factory instructions so three people may build on the plane at once</li>
+			<ul>
+				<li>Resource leveling (strategically planning so tools may be utilized to the best of our ability)</li>
+			</ul>
+			<li>Creating presentations to introduce builders to a part on which they will be working</li>
+		</ul>
+		<h2>
+			Current Instruction System
+		</h2>
+		<p>
+			Project Management needs help breaking down factory instructions so that three people may build on the plane at once. <br/>
+			<br/>
+			The current system has Project Management writing one set of master instructions that lists all steps as if the plane would be built by one person. From there, every step in the instructions is analyzed for three things:
+		</p>
+		<ul>
+			<li>What steps must be completed before a step may begin?</li>
+			<li>What tools does this step use?</li>
+			<li>What parts are involved with this step?</li>
+		</ul>
+		<p>
+			After these three constraints are analyzed, Project Management plugs the information into Microsoft Project and breaks the master set of instructions into three sets of instructions. Each person who will be building on the airplane at a given time receives one set of instructions. If each builder completes steps at the rate predicted by Project Management, there should never be a problem of two builders needing to use the same part or tool.
+		</p>
+		<h2>
+			The Problem with the Current System
+		</h2>
+		<p>
+			Because the people building the airplane will have vastly different experiences with tools and sheet metal working skills, it is very hard for Project Management to accurately predict how long it will take a builder to complete a given step in the instructions. This makes it hard to craft instructions that ensure that builders do not run into problems sharing tools or parts.<br/>
+			<br/>
+			Say that on any given day a builder gets much farther than anticipated in the instructions. The three sets of instructions are meaningless if the builders are not working at the same pace, because the instructions no longer insure that builders will not need to use the same tool. (Or work on the same part, or get to a step that depends on a step that is not completed yet.)
+		</p>
+		<h2>
+			The Fix (Dynamic Instructions)
+		</h2>
+		<p>
+			This is where Project Management needs help. The solution described below will only work if it can be translated into code. <br/>
+			<br/>
+			Before anything is imported into the system, Project Management has written a master set of instructions and relevant constraints.<br/>
+			<br/>
+			But instead of writing three sets of static, printed instructions, a database of steps (and the constraints corresponding to each step) would be imported to the program. This database now holds all the steps (and corresponding constraints) necessary to complete the part. However, the database would only display steps that could be completed given the current state of constraints. For example, if step 3 needs to be completed before step 4, but steps 1-3 can be completed at the same time, the database only displays steps 1-3. <br/>
+			<br/>
+			Each step can be in one of three states: Not started, in progress, and completed.To indicate that he or she is working on a specific step, a builder selects "in progress." The act of selecting "in progress" would narrow the list of steps available to the next builder because the "in progress" step would involve a certain tool and part that would conflict with other steps. After selecting "in progress" the program would display the corresponding step number in the master instructions.<br/>
+			<br/>
+			As soon as a builder finishes a step, he or she selects "completed." By selecting "completed," the list of available steps is widened because all steps that need the "in progress" step to be completed would become visible to the builder. (Also the tools and parts used for the "in progress" step will become available for all builders to use.)<br/>
+			<br/>
+			All three builders would be selecting steps from the same offline computer (A laptop running Windows XP in our build area), so no mobile app or webpage would need to be created.
+		</p>
+		<h2>
+			Additions to the Dynamic Instructions
+		</h2>
+		<p>
+			Some things that would be nice to incorporate into the program would be:
+		</p>
+		<ul>
+			<li>After a step is selected, the program prompts the user for their name so that we can track who is building on what parts.</li>
+			<li>The program determines the best next step. (This could be evaluated based on the number of steps that depend on the step in question.)</li>
+			<li>Each step displays a link that will open up a folder on the computer with pictures of every part associated with that step.</li>
+		</ul>
+		<h2>
+			Why we are Pursuing this Project
+		</h2>
+		<p>
+			This system would solve the problem Project Management has with planning three sets of static instructions and would be used every day that people will be building on the plane. 
+		</p>
+	</div>
+</div>	
+<div id="footer">
+	<div id="links">
+	<a href="https://www.facebook.com/sabuiuc"><img src="Images/Footer/facebook_icon_30x30.gif"/></a>
+	<a href="https://twitter.com/@SABUIUC"><img src="Images/Footer/icon-twitter.png"/></a><br/>
+	<b>Copyright &copy: 2013</b> Student Aircraft Builders at the University of Illinois at Urbana Champaign. All rights reserved.<br/>
+	<a href="index.html">Student Aircraft Builders</a><br/>
+	<a href="http://www.illinois.edu/">The University of Illinois at Urbana-Champaign</a>
+</div>
+<div id="address">
+	308 Talbot Lab<br/>104 South Wright Street<br/>Urbana, Illinois 61801
+</div></div>
+</body>
+</html>

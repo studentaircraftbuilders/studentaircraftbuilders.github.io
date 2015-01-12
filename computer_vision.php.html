@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Student Aircraft Builders - Computer Vision</title>
+	<link rel="stylesheet" type="text/css" href="stylesheetMain.css">
+	<script type="text/javascript" src="hover.js"></script>
+</head>
+
+<body>
+<div id="header">
+		<a href="index.html"><img src="Images/Header/header.jpg" alt="" width="900px"></a></div>
+<div id="container">
+	<div id="menu">
+		<ul id="nav">
+	<li><a href="news.php.html">News</a></li>
+	<li><a href="computer_vision.php.html#">About Us</a>
+		<ul>
+			<li><a href="bios.php.html">Officer Bios</a></li>
+			<li><a href="media.php.html">Media</a></li>
+			<!--<li><a href="http://sab.ae.illinois.edu/aboutus.php">Mission</a></li>-->
+			<!--<li><a href="http://sab.ae.illinois.edu/resources.php">Resources</a></li>-->
+			<!--<li><a href="http://sab.ae.illinois.edu/projectcost.php">Estimated Expenses</a></li>-->
+			<!--<li><a href="#">Executive Board</a></li>-->
+			<!--<li><a href="http://sab.ae.illinois.edu/longtermgoals.php">Long Term Goals</a></li>-->
+		</ul>
+	</li>
+	<li><a href="active_projects.php.html">Construction</a>
+		<ul>
+			<li><a href="2013-14_project.php.html">2013-14 Project</a></li>
+			<li><a href="build_implementation.php.html">Build Process</a></li>
+			<li><a href="project_management.php.html">Project Management</a></li>
+			<!--<li><a href="http://sab.ae.illinois.edu/cad_project.php">CAD Project</a></li>-->
+			<li><a href="constructionlogs.php.html">Construction Logs</a></li>
+			<li><a href="safety.php.html">Safety</a></li>
+		</ul>
+	</li>
+	<li><a href="active_projects.php.html">Special Projects</a>
+		<ul>
+			<li><a href="design_team.php.html">Design Team</a></li>
+			<!--<li><a href="http://sab.ae.illinois.edu/computer_vision.php">Computer Vision Project</a></li>-->
+			<li><a href="dynamic_instructions.php.html">Dynamic Instructions</a></li>
+			<li><a href="engine_team.php.html">Engine Build</a></li>
+		</ul>
+	</li>
+	<li><a href="ed_out.php.html">Educational Outreach</a></li>
+	<li><a href="calendar.php.html">Calendar</a></li>
+	<!--<li> <li><a href="#">New and Upcoming</a>
+		<ul>
+			<li><a href="http://sab.ae.illinois.edu/recentnews.php">Recent News</a></li>
+			<li><a href="http://sab.ae.illinois.edu/recruitment_social.php">Events and Social</a></li>
+			<li><a href="http://sab.ae.illinois.edu/calendar.php">Calendar</a></li>
+		</ul>
+	</li>
+	-->
+	<li><a href="sponsorship.php.html">Sponsorship</a></li>
+</ul>	</div>
+	
+	<div id="body">
+		<h1>
+			Computer Aided Manufacturing and Training
+		</h1>
+		<p>
+			Computer Aided Manufacturing and Training is a foray into the world of quality control 
+			using computer vision to quickly and objectively check the construction being performed.<br/>
+			This project involves developing a method to capture images of completed aircraft parts in such a way that 
+			they would be decipherable by a computer. This transformation of images to data will need 
+			to be developed along with a logic engine that could then use the data to determine if the 
+			parts match tolerances given by the manufacturer.<br/>
+			This project would run side by side with aircraft construction and its primary goal is 
+			assuring quality in some aspect of the build. The four aspects we will start with are distance and measurement correction, bend radius and angle 
+			measurement, planar judging, and rivet analysis through geometry.<br/>
+			This project has ground shaking implications for both industry and everyday life. This technology 
+			is currently primarily applied to aviation and automobile manufacturing, but the technology easily 
+			extrapolates to many industrial automation and inspection procedures. Why outsource manufacturing when 
+			new technology can undercut those costs with perfect accuracy?<br/>
+			Since the project is as simple as creative combinations of edge detection, data analysis, and
+			system modeling; the methodology is extremely adaptable to alternative tasks, environments, 
+			and applications. The three major areas we see our project most relevant to are Industrial 
+			Automation and Inspection, Object Recognition, and Real Time Object Tracking.
+		</p>
+		<h2>
+			Applications
+		</h2>
+		<h3>
+			Distance and Measurement Correction
+		</h3>
+		<p>
+			Distance and measurement correction applies build specifications such as hole punching and 
+			drilling placement. For example a set of holes on a piece of sheet metal spaced exactly 
+			3mm apart with 5mm of separation from the sheet's edge as shown below.
+		</p>
+		<img src="Images/Computer_Vision/holes_diagram.jpg">
+		<p>
+			If you notice the two holes attached to the rib (the right piece of metal in the picture 
+			below), the distance from the outer edge of the hole to the outer edge of the surface it 
+			lies upon is relatively close. There are structural concerns with any hole which is closer 
+			than 2 diameters from the edge. There are variances based on thickness of the sheet metal.
+		</p>
+		<img src="Images/Computer_Vision/holes_real.jpg">
+		<h3>
+			Bend Radius and Angle Measurement
+		</h3>
+		<p>
+			While working with sheet metal, a precise bend radius or angle between two planar sheets 
+			is commonly needed. The example shown below is not going to be the most common use, but 
+			there will be applications for judging the radii of cuts such as this. 
+		</p>
+		<img src="Images/Computer_Vision/bend_diagram.jpg">
+		<p>
+			An example of this can be seen below. There are three pieces in the bottom half of the 
+			picture. The centermost has been bent on each end to approximately 6 degrees from the 
+			horizontal. The left and right parts (spars) have been bent to accommodate this bend, 
+			again at 6 degrees from the horizontal. The method used for creating accuracy here 
+			involves similar triangles and tracing, obviously less than ideal.
+		</p>
+		<img src="Images/Computer_Vision/bend_example.jpg">
+		<h3>
+			Planar Judging
+		</h3>
+		<p>
+			During the manufacturing process, ribs are typically bent from their primary plane by a 
+			small margin. As the holes for the skins have already been cut, the ribs are needed to be 
+			perfectly planar (aka flat). An example can be seen below of what is used to repair this. 
+			This process is known as “fluting,” and basically bends the material into shape using the 
+			flange of the rib. Placement of this flute should be at the local maxima of the deviation 
+			from the planar surface, yet also needs to be spaced between holes.
+		</p>
+		<img src="Images/Computer_Vision/planar_ex.jpg">
+		<h3>
+			Rivet Analysis Through Geometry
+		</h3>
+		<p>
+			As seen below, there are many ways placing a rivet can go awry. However, rivet imperfections 
+			are easily seen and easy to model geometrically. Lucky for us, these imperfections have been 
+			heavily analysed and well documented by industry and our tolerances are all well established.
+		</p>
+		<img src="Images/Computer_Vision/rivet_diagram.jpg">
+		<p>
+			Rivets can be checked actively during assembly or with static images, such as the one below.
+		</p>
+		
+		<img src="Images/Computer_Vision/riveting_2.jpg">
+		
+		<h3>
+			Edge Detection
+		</h3>
+		<p>
+			The first step to achieving any of the goals of the computer vision project is mastering edge detection. The CV group in SAB has been working to come up with more sophisticated image processing methods. Starting with any raw image, code run in Matlab strips away all of the overlaying features (i.e. colors, textures, etc.)  in a picture and leaves only the edges. This process is a subjective one and very sensitive to the intensity of an edge. The sharper an edge appears the easier it is to pick up, and similarly, subtle edges are hard to detect. Subtle edges can  be more easily detected if the search parameters are generalized, however this can lead to false positives and increased background noise.
+		</p>
+		<img src="Images/Computer_Vision/riveting_1.jpg">
+		<p>
+			We've taken the above image and processed it with our CV code. The results are as follows:
+		</p>
+		<img src="Images/Computer_Vision/thresh=.0050.jpg">
+		<p>
+			Set with a low sensitivity, the more prominent edges in the image remain, and exclude many of the softer edges. Note the lack of the person in the background. If we were to increase the sensitivity for edges, we get the following:
+		</p>
+		<img src="Images/Computer_Vision/thresh=.0010.jpg">
+		
+		<p>
+		Now we get almost all of the 'proper' edges in the picture. However, we also get several unwanted effects. The higher sensitivity for edges now picks up on the grain of the wood and the texture set into the cleco. These additional features would be considered unwanted noise in the scheme of our analysis.
+		</p>
+		
+		<h3>
+			Image Analysis
+		</h3>
+		<p>
+			Taking image processing to the next step in the needs of the computer vision group, we need to get data out of our images instead of just lines. For our purposes, the easiest way to get our numbers is to include a reference marker. The airfoil below includes a black and white reference frame with premeasured dimensions.
+		</p>
+		
+		<div style="margin: 0 auto;" id="cfcontainer">
+		<div id="crossfade">
+			<img class="bottom" src="Images/Computer_Vision/thisiswhatineed.png" />
+			<img class="top" src="Images/Computer_Vision/Airfoil_With_Reference.jpg" />
+		</div>
+		</div>
+		
+		<p style="margin-top: 60px">
+			Running the image in Matlab <i>(hover over image to view result)</i>, we can clearly see the reference frame separate from the rest of the airframe. The reference marker is used to establish a relationship between physical distance and pixels in the image. From that relationship, other unknown distances in the image can be calculated (the distance between rivet holes, for instance).
+		</p>
+	</div>
+</div>
+<div id="footer">
+	<div id="links">
+	<a href="https://www.facebook.com/sabuiuc"><img src="Images/Footer/facebook_icon_30x30.gif"/></a>
+	<a href="https://twitter.com/@SABUIUC"><img src="Images/Footer/icon-twitter.png"/></a><br/>
+	<b>Copyright &copy: 2013</b> Student Aircraft Builders at the University of Illinois at Urbana Champaign. All rights reserved.<br/>
+	<a href="index.html">Student Aircraft Builders</a><br/>
+	<a href="http://www.illinois.edu/">The University of Illinois at Urbana-Champaign</a>
+</div>
+<div id="address">
+	308 Talbot Lab<br/>104 South Wright Street<br/>Urbana, Illinois 61801
+</div></div>
+</body>
+</html>
